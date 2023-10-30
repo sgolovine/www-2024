@@ -1,0 +1,21 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve -s ./app",
+    "build": "node ./build.js",
+    "serve": "npm run build && serve -s ./dist"
+  },
+  "keywords": [
+    "Personal Website"
+  ],
+  "author": "Sunny Golovine",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "html-minifier": "^4.0.0",
+    "serve": "^14.2.1"
+  }
+}
