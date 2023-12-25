@@ -23,3 +23,7 @@ This is the codebase for my personal website. The site is internally simple as I
 [2021](https://github.com/sgolovine/www-2021)
 
 [2022](https://github.com/sgolovine/www-2022)
+
+## Why is this site so simple?
+
+Previous versions of my website have been far more sophisticated and complex, complete with blogs, snippets, contact sections and more. This version is intentionally simple because truth be told, I have other priorities now. Between all the other projects I currently maintain I hardly have time to update my personal site. Keeping this site in pure HTML with a low overhead keeps the maintainence required to a minimum.
