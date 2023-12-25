@@ -4,13 +4,15 @@ This is the codebase for my personal website. The site is internally simple as I
 
 ## Running Locally
 
-1. Install dependencies: `npm i`
-2. Run the dev server: `npm run dev`
+To run locally, serve the `app` directory using an HTML document server of some kind. I personally use [serve](https://www.npmjs.com/package/serve)
 
-## Building For Production
+```shell
+npx serve -s app
+```
 
-1. Install dependencies: `npm i`
-2. Build the site: `npm run build`
+## Building for Production
+
+There is no build process for this site. Simply upload the `app` directory to a file host and the site should be avaliable.
 
 ## Previous Versions
 
@@ -26,4 +28,4 @@ This is the codebase for my personal website. The site is internally simple as I
 
 ## Why is this site so simple?
 
-Previous versions of my website have been far more sophisticated and complex, complete with blogs, snippets, contact sections and more. This version is intentionally simple because truth be told, I have other priorities now. Between all the other projects I currently maintain I hardly have time to update my personal site. Keeping this site in pure HTML with a low overhead keeps the maintainence required to a minimum.
+Previous versions of my website have been far more sophisticated and complex, complete with blogs, snippets, contact sections and more. This version is intentionally simple because truth be told, I have other priorities now. Between all the other projects I currently maintain, I hardly have time to update my personal site. Keeping this site in pure HTML with a low overhead keeps the maintainence required to a minimum.
