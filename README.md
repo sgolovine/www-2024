@@ -11,3 +11,15 @@ This is the codebase for my personal website. The site is internally simple as I
 
 1. Install dependencies: `npm i`
 2. Build the site: `npm run build`
+
+## Previous Versions
+
+[2018](https://github.com/sgolovine/www-2018)
+
+[2019](https://github.com/sgolovine/www-2019)
+
+[2020](https://github.com/sgolovine/www-2020)
+
+[2021](https://github.com/sgolovine/www-2021)
+
+[2022](https://github.com/sgolovine/www-2022)
