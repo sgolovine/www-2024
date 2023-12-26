@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["Golovine"]
+  "cSpell.words": [
+    "Golovine"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true
 }

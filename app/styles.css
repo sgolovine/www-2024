@@ -1,28 +1,42 @@
+:root {
+  --header-1: 2.5rem;
+  --header-2: 2rem;
+  --header-3: 1.5rem;
+  --text: 1.1rem;
+  --text-line-height: 1.2rem;
+  --border: 1px solid #333;
+}
+
+
 body {
   font-family: sans-serif;
+  padding: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--header-1);
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--header-2);
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: var(--header-3);
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.25rem;
+  font-size: var(--text);
+  line-height: var(--text-line-height);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 a {
-  font-size: 1.1rem;
+  font-size: var(--text);
   text-decoration: none;
 }
 
@@ -37,24 +51,18 @@ table {
   margin-right: 0.15rem;
 }
 
-tr, td {
-  border: 1px solid #333;
+tr, th, td {
+  border: var(--border);
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.15rem;
   padding-right: 0.15rem;
+  font-size: var(--text);
+  line-height: var(--text-line-height);
 }
 
 td {
   min-width: 150px;
-}
-
-
-.container {
-  padding: 1rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .section {
@@ -67,3 +75,12 @@ td {
   padding-bottom: 0.5rem;
 }
 
+.posts td {
+  min-width: 150px;
+  text-align: left;
+}
+
+.posts th {
+  text-align: left;
+  font-weight: bold;
+}
