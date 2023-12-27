@@ -5,15 +5,27 @@
   --text: 1.1rem;
   --text-line-height: 1.2rem;
   --border: 1px solid #333;
+  
+
+  /** The width of all content on the site **/
+  --content-width: 800px;
 }
 
 
 body {
   font-family: sans-serif;
   padding: 1rem;
-  max-width: 800px;
+  max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 h1 {
@@ -65,12 +77,12 @@ td {
   min-width: 150px;
 }
 
-.section {
+.s {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.sub-section {
+.s2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }

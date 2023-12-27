@@ -7,8 +7,10 @@ This is the codebase for my personal website. The site is internally simple as I
 To run locally, serve the `app` directory using an HTML document server of some kind. I personally use [serve](https://www.npmjs.com/package/serve)
 
 ```shell
-npx serve -s app
+npx http-server -s app
 ```
+
+**NOTE**: I highly suggest using `http-handler` over something like `serve`, for some reason `serve` will not properly serve sub-pages and will auto-redirect to the landing page. This could probably be fixed with a custom serve handler but adding that sort of logic breaks the principles of this website.
 
 ## Building for Production
 
