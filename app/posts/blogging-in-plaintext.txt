@@ -24,7 +24,7 @@ almost certain that any browser or device will be able to read this article.
 Another advantage is that you don't even need a browser to read this article,
 and can read it perfectly by just using cURL, try it:
 
-curl http://sunny.gg/posts/blogging-in-plaintext.txt
+curl https://sunny.gg/posts/blogging-in-plaintext.txt
 
 However there are tons of disadvantages to blogging this way. The main one is
 that your post is just text, nothing else. That means no images, no clickable
