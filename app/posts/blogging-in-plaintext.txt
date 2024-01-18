@@ -1,0 +1,49 @@
+Title: Blogging in Plaintext
+Date: Jan 18, 2024
+
+---
+
+The other day I stumbled upon a really old fan-fiction website[1]. It was your
+typical 90's looking website, complete with posts dating back to 1995. Poking
+around I noticed that all the posts on the page were written in plaintext (ie.
+some-post.txt) and I really liked the simplicity of all of it. 
+
+It got me thinking, ever since I switched to my "simpleton website"[2] I've
+been very satisfied with the simplicity of the site but wished that the
+blogging experience was more simple and elegant without having to worry
+about the "overhead" of using HTML tags in my posts (as little overhead as that
+is).
+
+So I've decided to give blogging in plaintext a go. It's still yet to be seen
+how well this works in the long term but for now I see some advantages and 
+disadvantages of this approach. The main advantage is that is it boils blogging
+down to it's simplest form: no pictures, no comments, not even inline links,
+just words on a screen. The other major advantage is compatibility, since
+plaintext has been around since the earliest days of the computer, I can be
+almost certain that any browser or device will be able to read this article. 
+Another advantage is that you don't even need a browser to read this article,
+and can read it perfectly by just using cURL, try it:
+
+curl http://sunny.gg/posts/blogging-in-plaintext.txt
+
+However there are tons of disadvantages to blogging this way. The main one is
+that your post is just text, nothing else. That means no images, no clickable
+links, and no analytics to figure out how many people have read this post. I'm
+sure for many, any one of these would be an instant deal-breaker though for a
+small personal blog like mine, I'm fine with the tradeoffs. I was even worried
+that my posts would not get indexed by search engines though after looking into
+it, it seems that Google (and I presume others) do in fact index txt files[3]. 
+I'm sure I'm not doing myself any SEO favors by writing posts in plaintext 
+though I'm not really concerned with hitting the first page of Google. 
+
+So let the plaintext blog post experiment begin, it worked for the 90s kids so
+I'm hopeful it will work for me too. 
+
+
+
+
+[1]: https://anybrowser.org/soaps/gl/rot.shtml
+
+[2]: https://sunny.gg/posts/my-simpleton-website
+
+[3]: https://developers.google.com/search/docs/crawling-indexing/indexable-file-types
