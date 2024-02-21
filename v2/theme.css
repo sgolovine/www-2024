@@ -1,0 +1,179 @@
+/* sunny.gg theme */
+
+:root {
+  /* ---------------- [TOKENS] ---------------- */
+  /* spacing */
+  --space--0-20: 0.2rem;
+  --space--0-25: 0.25rem;
+  --space--0-5: 0.5rem;
+  --space--1: 1rem;
+  --space--1-25: 1.25rem;
+  --space--1-5: 1.5rem;
+  --space--1-75: 1.75rem;
+  --space--2: 2rem;
+  --space-2-25: 2.25rem;
+  --space--3: 3rem;
+  --space-full: 100%;
+
+  /* colors */
+  --blue-grey-900: #263238;
+  --blue-grey-800: #37474f;
+  --blue-grey-700: #455a64;
+  --blue-grey-600: #546e7a;
+  --blue-grey-500: #607d8b;
+  --blue-grey-300: #90a4ae;
+
+  --grey-900: #212121;
+  --grey-800: #424242;
+  --grey-700: #616161;
+  --grey-600: #757575;
+  --grey-500: #9e9e9e;
+  --grey-400: #bdbdbd;
+  --grey-300: #e0e0e0;
+  --grey-200: #eeeeee;
+  --grey-100: #f5f5f5;
+  --grey-50: #fafafa;
+
+  --amber-900: #ff6f00;
+  --amber-800: #ff8f00;
+  --amber-700: #ffa000;
+  --amber-600: #ffb300;
+  --amber-500: #ffc107;
+
+  --white: #fff;
+
+  /* ---------------- [THEME] ---------------- */
+  /* global */
+  --site-font: monospace;
+  --body-width: 65rem;
+  --border: var(--space--0-20) solid var(--blue-grey-500);
+  --background-color: var(--blue-grey-800);
+
+  /* heading 1 */
+  --h1-font-size: var(--space--2);
+  --h1-line-height: var(--space--2-5);
+  --h1-color: var(--white);
+
+  /* heading 2 */
+  --h2-font-size: var(--space--1-75);
+  --h2-line-height: var(--space-2-25);
+  --h2-bottom-padding: var(--space--1-5);
+  --h2-color: var(--grey-300);
+
+  /* paragraph */
+  --p-font-size: var(--space--1-25);
+  --p-line-height: var(--space--1-75);
+  --p-color: var(--white);
+
+  /* anchor */
+  --anchor-font-size: var(--space--1-25);
+  --anchor-line-height: var(--space--1-75);
+  --anchor-color: var(--amber-900);
+  --anchor-hover-color: var(--amber-600);
+  --anchor-active-color: var(--amber-500);
+  --anchor-visited-color: var(--amber-900);
+
+  /* table */
+  --table-cell-spacing: var(--space--1);
+  --table-border: 2px dashed var(--blue-grey-300);
+}
+
+/* ---------------- [ CONTAINERS ] ---------------- */
+html {
+  font-family: var(--site-font);
+  background-color: var(--background-color);
+  height: var(--space-full);
+}
+
+body {
+  max-width: var(--body-width);
+
+  /* vertical border on right of screen */
+  border-right: var(--border);
+
+  /* ensure border goes down full length of page */
+  height: var(--space-full);
+}
+
+header {
+  padding: var(--space--1-5);
+  border-bottom: var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header > p {
+  padding-top: var(--space--1);
+  padding-bottom: var(--space--1);
+}
+
+section {
+  padding-left: var(--space--1-5);
+  padding-right: var(--space--1-5);
+  padding-top: var(--space--2);
+  padding-bottom: var(--space--3);
+  border-bottom: var(--border);
+}
+
+/* ---------------- [ TEXT ] ---------------- */
+h1 {
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  color: var(--h1-color);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  color: var(--h2-color);
+  padding-bottom: var(--h2-bottom-padding);
+  font-weight: bold;
+}
+
+p {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--p-color);
+}
+
+a {
+  font-size: var(--anchor-font-size);
+  line-height: var(--anchor-line-height);
+  color: var(--anchor-color);
+}
+
+a:hover {
+  color: var(--anchor-hover-color);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--anchor-active-color);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--anchor-visited-color);
+}
+
+/* ---------------- [ TABLE ] ---------------- */
+table {
+  color: var(--p-color);
+  width: var(--space-full);
+  font-size: var(--p-font-size);
+  margin-top: var(--space--1);
+  margin-bottom: var(--space-1);
+}
+
+thead > tr > td {
+  font-weight: bold;
+  color: var(--amber-900);
+}
+
+td {
+  border: var(--table-border);
+  padding: var(--table-cell-spacing);
+}

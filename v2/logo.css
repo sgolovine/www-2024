@@ -1,0 +1,15 @@
+/* css for the header logo */
+/* this uses colors that are defined in theme.css */
+
+.logo {
+  height: 128px;
+}
+
+.logo-main {
+  fill: var(--amber-500);
+}
+
+.logo-alt {
+  /* color should be the same as the background */
+  color: var(--background-color);
+}
