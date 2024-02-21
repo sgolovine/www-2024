@@ -1,15 +1,31 @@
 /* css for the header logo */
 /* this uses colors that are defined in theme.css */
 
+:root {
+  --logo-container-size: 140px;
+  --logo-size: 128px;
+}
+
+.logo-container {
+  background-color: var(--white);
+  height: var(--logo-container-size);
+  width: var(--logo-container-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: var(--space--2);
+}
+
 .logo {
-  height: 128px;
+  height: var(--logo-size);
 }
 
 .logo-main {
-  fill: var(--amber-500);
+  fill: var(--grey-800);
 }
 
 .logo-alt {
   /* color should be the same as the background */
-  color: var(--background-color);
+  fill: var(--white);
 }
