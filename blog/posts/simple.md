@@ -1,6 +1,6 @@
 ---
 title: Markdown test post
-date: 02-22-2024
+date: 2024-02-15
 description: This is a basic markdown test post
 published: true
 ---

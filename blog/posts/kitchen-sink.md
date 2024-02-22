@@ -1,6 +1,6 @@
 ---
 title: Markdown Kitchen Sink
-date: 02-22-2024
+date: 2024-02-12
 description: This is a "kitchen sink" example that highlights all aspects of Markdown syntax.
 published: true
 ---
