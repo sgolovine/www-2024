@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{description}}"
+    />
+
+    <!-- CSS Reset Styles -->
+    <style>
+      *:where(
+          :not(html, iframe, canvas, img, svg, video, audio):not(
+              svg *,
+              symbol *
+            )
+        ) {
+        all: unset;
+        display: revert;
+      }
+
+      /* Preferred box-sizing value */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* Fix mobile Safari increase font-size on landscape mode */
+      html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+      }
+
+      /* Reapply the pointer cursor for anchor tags */
+      a,
+      button {
+        cursor: revert;
+      }
+
+      /* Remove list styles (bullets/numbers) */
+      ol,
+      ul,
+      menu,
+      summary {
+        list-style: none;
+      }
+
+      /* For images to not be able to exceed their container */
+      img {
+        max-inline-size: 100%;
+        max-block-size: 100%;
+      }
+
+      /* removes spacing between cells in tables */
+      table {
+        border-collapse: collapse;
+      }
+
+      /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+      input,
+      textarea {
+        -webkit-user-select: auto;
+      }
+
+      /* revert the 'white-space' property for textarea elements on Safari */
+      textarea {
+        white-space: revert;
+      }
+
+      /* minimum style to allow to style meter element */
+      meter {
+        -webkit-appearance: revert;
+        appearance: revert;
+      }
+
+      /* preformatted text - use only for this feature */
+      :where(pre) {
+        all: revert;
+        box-sizing: border-box;
+      }
+
+      /* reset default text opacity of input placeholder */
+      ::placeholder {
+        color: unset;
+      }
+
+      /* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+      :where([hidden]) {
+        display: none;
+      }
+
+      /* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+      :where([contenteditable]:not([contenteditable="false"])) {
+        -moz-user-modify: read-write;
+        -webkit-user-modify: read-write;
+        overflow-wrap: break-word;
+        -webkit-line-break: after-white-space;
+        -webkit-user-select: auto;
+      }
+
+      /* apply back the draggable feature - exist only in Chromium and Safari */
+      :where([draggable="true"]) {
+        -webkit-user-drag: element;
+      }
+
+      /* Revert Modal native behavior */
+      :where(dialog:modal) {
+        all: revert;
+        box-sizing: border-box;
+      }
+
+      /* Remove details summary webkit styles */
+      ::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+
+    <!-- Theme Styles -->
+    <style>
+      /* sunny.gg theme */
+
+      :root {
+        /* ---------------- [TOKENS] ---------------- */
+        /* spacing */
+        --space--0-10: 0.1rem;
+        --space--0-20: 0.2rem;
+        --space--0-25: 0.25rem;
+        --space--0-5: 0.5rem;
+        --space--1: 1rem;
+        --space--1-25: 1.25rem;
+        --space--1-5: 1.5rem;
+        --space--1-75: 1.75rem;
+        --space--2: 2rem;
+        --space--2-25: 2.25rem;
+        --space--3: 3rem;
+        --space--full: 100%;
+
+        /* colors */
+        --blue-grey-900: #263238;
+        --blue-grey-800: #37474f;
+        --blue-grey-700: #455a64;
+        --blue-grey-600: #546e7a;
+        --blue-grey-500: #607d8b;
+        --blue-grey-300: #90a4ae;
+
+        --grey-900: #212121;
+        --grey-800: #424242;
+        --grey-700: #616161;
+        --grey-600: #757575;
+        --grey-500: #9e9e9e;
+        --grey-400: #bdbdbd;
+        --grey-300: #e0e0e0;
+        --grey-200: #eeeeee;
+        --grey-100: #f5f5f5;
+        --grey-50: #fafafa;
+
+        --amber-900: #ff6f00;
+        --amber-800: #ff8f00;
+        --amber-700: #ffa000;
+        --amber-600: #ffb300;
+        --amber-500: #ffc107;
+
+        --white: #fff;
+
+        /* ---------------- [THEME] ---------------- */
+        /* global */
+        --site-font: monospace;
+        --body-width: 65rem;
+        --border: var(--space--0-20) solid var(--blue-grey-500);
+        --background-color: var(--blue-grey-800);
+
+        /* heading 1 */
+        --h1-font-size: var(--space--2);
+        --h1-line-height: var(--space--2-5);
+        --h1-color: var(--white);
+
+        /* heading 2 */
+        --h2-font-size: var(--space--1-75);
+        --h2-line-height: var(--space--2-25);
+        --h2-bottom-padding: var(--space--1-5);
+        --h2-color: var(--grey-300);
+
+        /* heading 3 */
+        --h3-font-size: var(--space--1-5);
+        --h3-line-height: var(--space--2);
+        --h3-bottom-padding: var(--space--1);
+        --h3-color: var(--grey-300);
+
+        /* paragraph */
+        --p-font-size: var(--space--1-25);
+        --p-line-height: var(--space--1-75);
+        --p-color: var(--white);
+
+        /* anchor */
+        --anchor-font-size: var(--space--1-25);
+        --anchor-line-height: var(--space--1-75);
+        --anchor-color: var(--amber-900);
+        --anchor-hover-color: var(--amber-600);
+        --anchor-active-color: var(--amber-500);
+        --anchor-visited-color: var(--amber-900);
+
+        /* table */
+        --table-cell-spacing: var(--space--1);
+        --table-border: 2px dashed var(--blue-grey-300);
+      }
+
+      /* ---------------- [ CONTAINERS ] ---------------- */
+      html {
+        font-family: var(--site-font);
+        background-color: var(--background-color);
+        height: var(--space--full);
+      }
+
+      body {
+        min-height: var(--space--full);
+        max-width: var(--body-width);
+
+        /* vertical border on right of screen */
+        border-right: var(--border);
+      }
+
+      header {
+        padding: var(--space--1-5);
+        border-bottom: var(--border);
+      }
+
+      header > h1 {
+        line-height: var(--space--3);
+      }
+
+      header > .date {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      header > .intro {
+        padding-top: var(--space--0-5);
+        font-size: 16px;
+      }
+
+      section {
+        padding-left: var(--space--1-5);
+        padding-right: var(--space--1-5);
+        padding-top: var(--space--2);
+        padding-bottom: var(--space--3);
+        border-bottom: var(--border);
+      }
+
+      /* ---------------- [ HEADER NAV ] ---------------- */
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space--2);
+        padding-top: var(--space--0-5);
+        padding-bottom: var(--space--0-5);
+      }
+
+      nav > a {
+        color: var(--grey-100);
+        font-weight: bold;
+        padding-top: var(--space--0-25);
+        padding-bottom: var(--space--0-25);
+        padding-left: var(--space--0-5);
+        padding-right: var(--space--0-5);
+        border-radius: var(--space--0-25);
+      }
+
+      nav > a:hover {
+        color: var(--amber-700);
+        background-color: var(--blue-grey-700);
+        text-decoration: none;
+      }
+
+      /* ---------------- [ FOOTER ] ---------------- */
+
+      footer {
+        text-align: center;
+        padding-top: var(--space--1);
+        padding-bottom: var(--space--1);
+      }
+
+      footer > nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--space--0-5);
+      }
+
+      footer > p {
+        color: var(--grey-400);
+        font-size: var(--space--1);
+      }
+
+      /* ---------------- [ TEXT ] ---------------- */
+      h1 {
+        font-size: var(--h1-font-size);
+        line-height: var(--h1-line-height);
+        color: var(--h1-color);
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: var(--h2-font-size);
+        line-height: var(--h2-line-height);
+        color: var(--h2-color);
+        padding-bottom: var(--h2-bottom-padding);
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size: var(--h3-font-size);
+        line-height: var(--h3-line-height);
+        color: var(--h3-color);
+        padding-bottom: var(--h3-bottom-padding);
+        font-weight: bold;
+      }
+
+      p {
+        font-size: var(--p-font-size);
+        line-height: var(--p-line-height);
+        color: var(--p-color);
+      }
+
+      a {
+        color: var(--amber-500);
+        font-weight: bold;
+        padding-left: var(--space--0-25);
+        padding-right: var(--space--0-25);
+        padding-top: var(--space--0-10);
+        padding-bottom: var(--space--0-10);
+        border-radius: var(--space--0-25);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--amber-700);
+        background-color: var(--blue-grey-700);
+        text-decoration: none;
+      }
+
+      /* ---------------- [ TABLE ] ---------------- */
+      table {
+        color: var(--p-color);
+        width: var(--space--full);
+        font-size: var(--p-font-size);
+        margin-top: var(--space--1);
+        margin-bottom: var(--space-1);
+      }
+
+      thead > tr > td {
+        font-weight: bold;
+        color: var(--amber-700);
+      }
+
+      td {
+        border: var(--table-border);
+        padding: var(--table-cell-spacing);
+      }
+
+      /* ---------------- [ MISC ] ---------------- */
+      hr {
+        margin-top: var(--space--1-5);
+        margin-bottom: var(--space--1-5);
+        height: var(--space--0-20);
+        background-color: var(--blue-grey-500);
+      }
+    </style>
+
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <!-- Main Header Text -->
+      <p class="date">{{date}}</p>
+      <h1>{{title}}</h1>
+      <p class="intro">{{description}}</p>
+    </header>
+
+    <!-- About Me Section -->
+    <section>
+      {{{html}}}
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">All Posts</a>
+        <a href="https://github.com/sgolovine">Github</a>
+        <a href="https://www.linkedin.com/in/SunnyGolovine">Linkedin</a>
+        <a href="mailto:sunny@golovinemail.org">Email</a>
+        <a href="https://github.com/sgolovine/www">Website Source Code</a>
+      </nav>
+      <p>Copyright 2022 Sunny Golovine</p>
+    </footer>
+  </body>
+</html>

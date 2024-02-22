@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 import markdownit from "markdown-it";
+import Handlebars from "handlebars";
 
 const md = markdownit();
 
@@ -20,14 +21,28 @@ interface PostmapItem {
   slug: string;
 }
 
+interface TemplateOptions {
+  description: string;
+  title: string;
+  date: string;
+  html: string;
+}
+
 // where md posts are kept
 const postsPath = path.resolve(process.cwd(), "posts");
 
 // where html will be ouputted
 const outputPath = path.resolve(process.cwd(), "html");
 
+// template path
+const templatePath = path.resolve(process.cwd(), "template", "index.hbs");
+
 // main
-(() => {
+(async () => {
+  // read the template
+  const templateFile = fs.readFileSync(templatePath, "utf-8");
+  const template = Handlebars.compile(templateFile);
+
   // get the post filenames in the `posts` directory
   const postList = fs.readdirSync(postsPath);
 
@@ -57,8 +72,23 @@ const outputPath = path.resolve(process.cwd(), "html");
       return dateA - dateB;
     });
 
-  // TODO:
-  // Now that we have a postmap
-  // We need to marry it to an handlebars template that will
-  // define the page outside of the main content.
+  map.forEach((mapItem) => {
+    const outputDir = path.resolve(outputPath, mapItem.slug);
+
+    // if the output directory does not exist, create it.
+    if (!fs.existsSync(path.resolve(outputPath, mapItem.slug))) {
+      fs.mkdirSync(outputDir);
+    }
+
+    const templateOptions: TemplateOptions = {
+      description: mapItem.meta.description,
+      title: mapItem.meta.title,
+      date: mapItem.meta.date,
+      html: mapItem.html,
+    };
+
+    const html = template(templateOptions);
+
+    fs.writeFileSync(path.resolve(outputDir, "index.html"), html);
+  });
 })();
