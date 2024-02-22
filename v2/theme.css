@@ -61,6 +61,12 @@
   --h2-bottom-padding: var(--space--1-5);
   --h2-color: var(--grey-300);
 
+  /* heading 3 */
+  --h3-font-size: var(--space--1-5);
+  --h3-line-height: var(--space--2);
+  --h3-bottom-padding: var(--space--1);
+  --h3-color: var(--grey-300);
+
   /* paragraph */
   --p-font-size: var(--space--1-25);
   --p-line-height: var(--space--1-75);
@@ -178,6 +184,14 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  color: var(--h3-color);
+  padding-bottom: var(--h3-bottom-padding);
+  font-weight: bold;
+}
+
 p {
   font-size: var(--p-font-size);
   line-height: var(--p-line-height);
@@ -192,6 +206,7 @@ a {
   padding-top: var(--space--0-10);
   padding-bottom: var(--space--0-10);
   border-radius: var(--space--0-25);
+  text-decoration: none;
 }
 
 a:hover {
@@ -217,4 +232,12 @@ thead > tr > td {
 td {
   border: var(--table-border);
   padding: var(--table-cell-spacing);
+}
+
+/* ---------------- [ MISC ] ---------------- */
+hr {
+  margin-top: var(--space--1-5);
+  margin-bottom: var(--space--1-5);
+  height: var(--space--0-20);
+  background-color: var(--blue-grey-500);
 }
