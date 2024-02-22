@@ -8,8 +8,11 @@
   },
   "keywords": [],
   "author": "Sunny Golovine",
-  "license": "ISC",
-  "devDependencies": {
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.0.0",
+    "@types/markdown-it": "^13.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
