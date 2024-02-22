@@ -16,9 +16,9 @@ npx http-server -s app
 
 There is no build process for this site. Simply upload the `app` directory to a file host and the site should be avaliable.
 
-## TODO
+## Blog
 
-- Meta + SEO for posts: Right now we just have the standard page header.
+Currently workinng on adding a blog to the site. Progress ongoing in the `blog` directory. This will eventually integrate into the main site.
 
 ## Previous Versions
 
