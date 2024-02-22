@@ -3,6 +3,7 @@
 :root {
   /* ---------------- [TOKENS] ---------------- */
   /* spacing */
+  --space--0-10: 0.1rem;
   --space--0-20: 0.2rem;
   --space--0-25: 0.25rem;
   --space--0-5: 0.5rem;
@@ -86,13 +87,11 @@ html {
 }
 
 body {
+  min-height: var(--space--full);
   max-width: var(--body-width);
 
   /* vertical border on right of screen */
   border-right: var(--border);
-
-  /* ensure border goes down full length of page */
-  height: var(--space--full);
 }
 
 header {
@@ -142,6 +141,27 @@ nav > a:hover {
   text-decoration: none;
 }
 
+/* ---------------- [ FOOTER ] ---------------- */
+
+footer {
+  text-align: center;
+  padding-top: var(--space--1);
+  padding-bottom: var(--space--1);
+}
+
+footer > nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space--0-5);
+}
+
+footer > p {
+  color: var(--grey-400);
+  font-size: var(--space--1);
+}
+
 /* ---------------- [ TEXT ] ---------------- */
 h1 {
   font-size: var(--h1-font-size);
@@ -165,14 +185,19 @@ p {
 }
 
 a {
-  font-size: var(--anchor-font-size);
-  line-height: var(--anchor-line-height);
-  color: var(--anchor-color);
+  color: var(--amber-500);
+  font-weight: bold;
+  padding-left: var(--space--0-25);
+  padding-right: var(--space--0-25);
+  padding-top: var(--space--0-10);
+  padding-bottom: var(--space--0-10);
+  border-radius: var(--space--0-25);
 }
 
 a:hover {
-  color: var(--anchor-hover-color);
-  text-decoration: underline;
+  color: var(--amber-700);
+  background-color: var(--blue-grey-700);
+  text-decoration: none;
 }
 
 /* ---------------- [ TABLE ] ---------------- */
@@ -186,7 +211,7 @@ table {
 
 thead > tr > td {
   font-weight: bold;
-  color: var(--amber-900);
+  color: var(--amber-700);
 }
 
 td {
