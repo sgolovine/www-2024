@@ -96,8 +96,14 @@ body {
   min-height: var(--space--full);
   max-width: var(--body-width);
 
-  /* vertical border on right of screen */
+  /* center content */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* vertical border on sides of screen */
+  border-left: var(--border);
   border-right: var(--border);
+
 }
 
 header {
